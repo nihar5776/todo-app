@@ -1,0 +1,377 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #333;
+}
+
+
+.container {
+    background: #ffffff;
+    width: 380px;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+    animation: fadeIn 0.6s ease-in-out;
+}
+
+
+.heading {
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.heading h1 {
+    font-size: 24px;
+    color: #333;
+}
+
+
+form {
+    width: 100%;
+}
+
+.cred,
+.login-cred {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    font-size: 14px;
+    margin-bottom: 6px;
+    color: #555;
+}
+
+
+input[type="text"] {
+    padding: 12px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    font-size: 14px;
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+input[type="text"]:focus {
+    border-color: #667eea;
+    box-shadow: 0 0 0 2px rgba(102, 126, 234, 0.2);
+}
+
+
+button {
+    margin-top: 20px;
+    padding: 12px;
+    width: 100%;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.25);
+}
+
+button:active {
+    transform: translateY(0);
+}
+
+
+.topnav {
+    background: #ffffff;
+    padding: 15px 25px;
+    border-radius: 12px;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.25);
+    display: flex;
+    gap: 20px;
+}
+
+.topnav a {
+    text-decoration: none;
+    font-weight: 600;
+    color: #555;
+    transition: color 0.3s ease;
+}
+
+.topnav a:hover {
+    color: #667eea;
+}
+
+.topnav a.active {
+    color: #764ba2;
+}
+
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+@media (max-width: 420px) {
+    .container {
+        width: 90%;
+        padding: 25px;
+    }
+
+    .topnav {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+}
+
+/* ================= TASK PAGE FIXES ================= */
+
+/* Wrapper to handle body flex-centering issue */
+.page-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+/* Make sure task page body can stack elements */
+body {
+    flex-direction: column;
+    padding: 20px;
+}
+
+/* Task page container spacing */
+.container {
+    margin-top: 0;
+}
+
+/* Header */
+.header-section {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.header-section h1 {
+    font-size: 22px;
+    color: #333;
+}
+
+/* Logout section */
+.logout-section {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 15px;
+}
+
+#logout-btn {
+    width: auto;
+    padding: 8px 16px;
+    font-size: 14px;
+}
+
+/* Input row */
+.input-section {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.add-space {
+    flex: 1;
+}
+
+/* Tasks container */
+.tasks-section {
+    background: #ffffff;
+    width: 380px;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+    animation: fadeIn 0.4s ease-in-out;
+}
+
+/* Individual task */
+.tasks-section p {
+    padding: 10px 12px;
+    background: #f5f6ff;
+    border-radius: 6px;
+    margin-bottom: 10px;
+    font-size: 14px;
+    border-left: 4px solid #667eea;
+}
+
+/* Responsive */
+@media (max-width: 420px) {
+    .tasks-section {
+        width: 90%;
+    }
+
+    .input-section {
+        flex-direction: column;
+    }
+
+    .add-btn {
+        width: 100%;
+    }
+}
+
+
+.task-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #f5f6ff;
+    padding: 10px 12px;
+    border-radius: 6px;
+    margin-bottom: 10px;
+    border-left: 4px solid #667eea;
+}
+
+.task-item span {
+    font-size: 14px;
+    color: #333;
+}
+
+.delete-btn {
+    background: #ff5c5c;
+    border: none;
+    color: white;
+    padding: 6px 10px;
+    border-radius: 6px;
+    font-size: 12px;
+    cursor: pointer;
+    width: auto;
+}
+
+.delete-btn:hover {
+    background: #e54848;
+}
+/* Mark task button */
+.mark-btn {
+    background: #ff9800;          /* InProgress color */
+    color: white;
+    border: none;
+    padding: 6px 10px;
+    border-radius: 6px;
+    font-size: 12px;
+    font-weight: 600;
+    cursor: pointer;
+    width: auto;
+    margin-right: 8px;
+    transition: background 0.3s ease;
+}
+
+/* Hover for InProgress */
+.mark-btn:hover {
+    background: #fb8c00;
+}
+
+/* Done state */
+.mark-btn.done {
+    background: #4caf50;          /* Done color */
+}
+
+/* Hover for Done */
+.mark-btn.done:hover {
+    background: #43a047;
+}
+
+/* ================= IMPROVED TASK PAGE UI ================= */
+
+/* Input section vertical layout */
+.input-section {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.add-title,
+.add-desc {
+    width: 100%;
+}
+
+/* ===== TASK CARD ===== */
+.task-item {
+    position: relative;
+    background: #f5f6ff;
+    padding: 20px 90px 50px 20px;  /* 🔑 bottom padding reserved */
+    border-radius: 10px;
+    margin-bottom: 16px;
+    border-left: 5px solid #667eea;
+    min-height: 120px;            /* 🔑 forces vertical separation */
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+/* Task title */
+.task-title {
+    font-size: 15px;
+    font-weight: 600;
+    color: #333;
+}
+
+/* Task description */
+.task-desc {
+    font-size: 13px;
+    color: #555;
+    line-height: 1.4;
+}
+
+/* ===== MARK AS DONE (TOP RIGHT) ===== */
+.mark-btn {
+    position: absolute;
+    top: 14px;
+    right: 14px;
+    background: #ff9800;
+    color: white;
+    border: none;
+    padding: 6px 14px;
+    border-radius: 6px;
+    font-size: 11px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+/* Done state */
+.mark-btn.done {
+    background: #4caf50;
+}
+
+/* ===== DELETE (BOTTOM RIGHT) ===== */
+.delete-btn {
+    position: absolute;
+    bottom: 14px;
+    right: 14px;
+    background: #ff5c5c;
+    color: white;
+    border: none;
+    padding: 6px 14px;
+    border-radius: 6px;
+    font-size: 11px;
+    cursor: pointer;
+}
+
+.delete-btn:hover {
+    background: #e54848;
+}
+
