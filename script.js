@@ -221,9 +221,10 @@ document.addEventListener("DOMContentLoaded", function () {
             LogoutIn.addEventListener('click', function () {
                 localStorage.removeItem("isLoggedIn");
                 localStorage.removeItem("currentUser");
-                window.location.href = "home.html";
+                window.location.href = "index.html";
             });
         }
     }
 
 });
+
